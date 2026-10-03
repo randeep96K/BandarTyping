@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bandartyping
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: bandartyping-data
+      mountPath: /app/data
+      sizeGB: 1
